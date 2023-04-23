@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fieldReference"]
 }
 
 datasource db {
@@ -10,17 +11,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum Gender{
-  Male
-  Female
-}
+// enum Gender{
+//   Male
+//   Female
+//   Genderqueer
+//   Agender
+//   Bigender
+// }
 
 model User {
   id String @id @default(auto()) @map("_id") @db.ObjectId
-  firstName String
-  lastName String
+  first_name String
+  last_name String
   email String @unique
-  gender Gender
+  gender String
   income Float
   city String
   car String

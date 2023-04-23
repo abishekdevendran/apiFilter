@@ -38,7 +38,9 @@
 		"@types/morgan": "^1.9.4",
 		"@types/node": "^18.16.0",
 		"esbuild": "^0.17.18",
+		"nodemon": "^2.0.22",
 		"ts-node": "^10.9.1",
+		"tsconfig-paths": "^4.2.0",
 		"typescript": "^5.0.4"
 	}
 }
