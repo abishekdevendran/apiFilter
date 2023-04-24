@@ -23,6 +23,9 @@ async function getMalesAboveThousand(req: Request, res: Response) {
 				phone_price: {
 					gt: 10000,
 				},
+				gender: {
+					equals: 'Male',
+				},
 			},
 		});
 		res.status(200).json(data);
@@ -134,7 +137,7 @@ async function aggregateCities(req: Request, res: Response) {
 			pipeline: [
 				{
 					$group: {
-						_id: '$city',
+						name: '$city',
 						count: { $sum: 1 },
 						average_income: { $avg: '$income' },
 					},

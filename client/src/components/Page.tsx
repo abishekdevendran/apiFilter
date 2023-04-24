@@ -16,7 +16,7 @@ interface PageProps extends ComponentPropsWithoutRef<'main'> {
 const Page = ({ title, className, children }: PropsWithChildren<PageProps>) => {
 	return (
 		<main
-			className={`${poppins.variable} font-poppins pt-20 ${
+			className={`${poppins.variable} font-poppins pt-20 w-full h-full ${
 				className ? className : ''
 			}`}
 		>
