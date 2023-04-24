@@ -27,6 +27,9 @@ async function getMalesAboveThousand(req: Request, res: Response) {
 					equals: 'Male',
 				},
 			},
+			orderBy: {
+				phone_price: 'desc',
+			},
 		});
 		res.status(200).json(data);
 	} catch (err) {
