@@ -138,7 +138,7 @@ async function aggregateCities(req: Request, res: Response) {
 				{
 					$group: {
 						_id: '$city',
-						name: '$city', //name is just for the sake of naming the field
+						name: { $first: '$city' },
 						count: { $sum: 1 },
 						average_income: { $avg: '$income' },
 					},
