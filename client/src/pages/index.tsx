@@ -5,7 +5,7 @@ import { TUser } from '@/types/User';
 import useSWR from 'swr';
 
 function cityTableMaker(data: TCity[], title?: string) {
-	if(!data) return null;
+	if(data==null) return null;
 	return (
 		<div className="cityTableMaker w-full">
 			<h2 className="w-full text-center text-xl font-semibold">{title}</h2>
@@ -35,7 +35,7 @@ function cityTableMaker(data: TCity[], title?: string) {
 	);
 }
 function tableMaker(data: TUser[], title?: string) {
-	if (!data) return null;
+	if (data==null) return null;
 	return (
 		<div className="tableMaker w-full">
 			{title && (
