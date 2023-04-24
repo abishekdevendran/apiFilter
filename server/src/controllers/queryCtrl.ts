@@ -137,7 +137,8 @@ async function aggregateCities(req: Request, res: Response) {
 			pipeline: [
 				{
 					$group: {
-						name: '$city',
+						_id: '$city',
+						name: '$city', //name is just for the sake of naming the field
 						count: { $sum: 1 },
 						average_income: { $avg: '$income' },
 					},
