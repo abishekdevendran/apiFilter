@@ -22,7 +22,7 @@ function cityTableMaker(data: TCity[], title?: string) {
 					<tbody>
 						{data.map((city, idx) => (
 							<tr key={city.name}>
-								<td>{idx}</td>
+								<td>{idx+1}</td>
 								<td>{city.name}</td>
 								<td>{city.count}</td>
 								<td>{city.average_income}</td>
@@ -59,7 +59,7 @@ function tableMaker(data: TUser[], title?: string) {
 					<tbody>
 						{data.map((user, idx) => (
 							<tr key={user.id}>
-								<td>{idx}</td>
+								<td>{idx+1}</td>
 								<td>{`${user.first_name} ${user.last_name}`}</td>
 								<td>{user.email}</td>
 								<td>{user.gender}</td>
