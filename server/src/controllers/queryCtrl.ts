@@ -6,7 +6,7 @@ async function getIncomeCar(req: Request, res: Response) {
 		const data = await mongo.user.findMany({
 			where: {
 				income: { lt: 5 },
-				OR: [{ car: 'BMW' }, { car: 'Mercedes' }],
+				OR: [{ car: 'BMW' }, { car: 'Mercedes-Benz' }],
 			},
 		});
 		res.status(200).json(data);
@@ -59,13 +59,6 @@ async function getQuote(req: Request, res: Response) {
 					},
 				},
 				{
-					$project: {
-						quote: 1,
-						email: 1,
-						last_name: 1,
-					},
-				},
-				{
 					$match: {
 						quote: {
 							$regex: '^.{15,}$',
@@ -93,7 +86,7 @@ async function getCars(req: Request, res: Response) {
 		// 				car: 'BMW',
 		// 			},
 		// 			{
-		// 				car: 'Mercedes',
+		// 				car: 'Mercedes-Benz',
 		// 			},
 		// 			{
 		// 				car: 'Audi',
@@ -110,7 +103,7 @@ async function getCars(req: Request, res: Response) {
 				{
 					$match: {
 						car: {
-							$in: ['BMW', 'Mercedes', 'Audi'],
+							$in: ['BMW', 'Mercedes-Benz', 'Audi'],
 						},
 						email: {
 							$not: {
